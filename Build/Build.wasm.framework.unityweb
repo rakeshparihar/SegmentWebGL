@@ -3151,6 +3151,10 @@ __ATINIT__.push({
  })
 }, {
  func: (function() {
+  __GLOBAL__sub_I_Il2CppCodeRegistration_cpp();
+ })
+}, {
+ func: (function() {
   __GLOBAL__sub_I_Lump_libil2cpp_metadata_cpp();
  })
 }, {
@@ -3160,10 +3164,6 @@ __ATINIT__.push({
 }, {
  func: (function() {
   __GLOBAL__sub_I_Lump_libil2cpp_gc_cpp();
- })
-}, {
- func: (function() {
-  __GLOBAL__sub_I_Il2CppCodeRegistration_cpp();
  })
 }, {
  func: (function() {
@@ -3497,7 +3497,7 @@ function _SendGameAnalytics(event_Name, user_Id, game_Id, property_Data) {
   analytics.track(Pointer_stringify(event_Name), {
    "userId": Pointer_stringify(user_Id),
    "gameId": Pointer_stringify(game_Id),
-   "propertyData": Pointer_stringify(property_Data)
+   "propertyData": JSON.parse(Pointer_stringify(property_Data))
   });
  } else {
   console.log("Analutics object null");
